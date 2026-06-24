@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визуальный редактор CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1>🎨 Визуальный редактор CSS</h1>
+
+        <!-- Панель управления -->
+        <div class="controls">
+            <h2>Настройки блока</h2>
+
+            <div class="control-group">
+                <label>Цвет фона:</label>
+                <input type="color" id="bgColor" value="#6c5ce7">
+            </div>
+
+            <div class="control-group">
+                <label>Цвет текста:</label>
+                <input type="color" id="textColor" value="#ffffff">
+            </div>
+
+            <div class="control-group">
+                <label>Шрифт:</label>
+                <select id="fontFamily">
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="'Segoe UI', sans-serif">Segoe UI</option>
+                    <option value="'Times New Roman', serif">Times New Roman</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Размер шрифта:</label>
+                <input type="range" id="fontSize" min="10" max="40" value="20">
+                <span id="fontSizeDisplay">20px</span>
+            </div>
+
+            <div class="control-group">
+                <label>Внутренний отступ (padding):</label>
+                <input type="range" id="padding" min="0" max="50" value="20">
+                <span id="paddingDisplay">20px</span>
+            </div>
+
+            <div class="control-group">
+                <label>Внешний отступ (margin):</label>
+                <input type="range" id="margin" min="0" max="50" value="10">
+                <span id="marginDisplay">10px</span>
+            </div>
+
+            <div class="control-group">
+                <label>Скругление углов:</label>
+                <input type="range" id="borderRadius" min="0" max="30" value="10">
+                <span id="borderRadiusDisplay">10px</span>
+            </div>
+        </div>
+
+        <!-- Превью блока -->
+        <div class="preview">
+            <h2>📦 Превью блока</h2>
+            <div id="previewBlock" class="preview-block">
+                <h3>Пример текста</h3>
+                <p>Этот блок показывает применённые CSS-стили. Вы можете менять цвет, шрифт, отступы и многое другое в реальном времени.</p>
+                <p>Все изменения сохраняются в localStorage!</p>
+            </div>
+
+            <!-- Сгенерированный CSS-код -->
+            <div class="code-output">
+                <h3>📋 Сгенерированный CSS-код</h3>
+                <pre id="cssCode">/* CSS будет сгенерирован здесь */</pre>
+                <button id="copyBtn" class="copy-btn">📋 Копировать код</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
